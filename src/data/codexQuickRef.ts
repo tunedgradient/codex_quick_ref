@@ -61,10 +61,6 @@ export const columnSections: QuickRefSection[][] = [
             {
               text: "Sign in with your ChatGPT account or an OpenAI API key.",
             },
-            {
-              text: "Some cloud-thread features can be unavailable with API-key sign-in.",
-              tag: "gotcha",
-            },
           ],
         },
         {
