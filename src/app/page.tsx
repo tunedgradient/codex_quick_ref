@@ -1,66 +1,39 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { SectionCard } from "@/components/SectionCard";
+import { columnMiniCards, columnSections } from "@/data/codexQuickRef";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
+    <main className="canvas">
+      <article className="sheet" aria-label="Codex app quick reference layperson sheet">
+        <section className="sheet-main">
+          <div className="sheet-columns">
+            {columnSections.map((column, columnIndex) => (
+              <div key={`column-${columnIndex + 1}`} className="sheet-column">
+                <div className="sheet-column__stack">
+                  {column.map((section) => (
+                    <SectionCard key={section.id} section={section} />
+                  ))}
+                </div>
+
+                <article className="mini-card" aria-label={columnMiniCards[columnIndex].title}>
+                  <h3 className="mini-card__title">{columnMiniCards[columnIndex].title}</h3>
+                  <ul className="mini-card__list">
+                    {columnMiniCards[columnIndex].bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </article>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <footer className="sheet-footer">
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            Codex quick reference guide. Built with Codex. Last updated March 1, 2026.
           </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        </footer>
+      </article>
+    </main>
   );
 }
