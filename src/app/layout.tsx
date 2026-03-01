@@ -13,19 +13,20 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://codexquickref.vercel.app";
+
+const metadataDescription =
+  "Layperson-friendly Codex app quick reference covering shortcuts, Local/Worktree/Cloud modes, review workflow, automations, troubleshooting, and print tips.";
 
 export const metadata: Metadata = {
   title: "Codex App Quick Reference",
-  description:
-    "Single-page landscape cheat sheet for Codex app features, commands, settings, and key options.",
+  description: metadataDescription,
   metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Codex App Quick Reference",
-    description:
-      "Single-page landscape cheat sheet for Codex app features, commands, settings, and key options.",
+    description: metadataDescription,
+    type: "website",
+    url: siteUrl,
     images: [
       {
         url: "/codex-quick-reference-og-cover-x.png",
@@ -38,8 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Codex App Quick Reference",
-    description:
-      "Single-page landscape cheat sheet for Codex app features, commands, settings, and key options.",
+    description: metadataDescription,
     images: ["/codex-quick-reference-og-cover-x.png"],
   },
 };
