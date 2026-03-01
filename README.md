@@ -1,4 +1,4 @@
-# Codex App Quick Reference (Layperson Edition)
+# Codex App Quick Reference
 
 Single-page landscape cheat sheet built with Next.js App Router.
 

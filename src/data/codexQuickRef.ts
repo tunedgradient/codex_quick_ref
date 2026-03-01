@@ -40,7 +40,7 @@ export type SourceLink = { label: string; href: string };
 
 export const sheetMeta = {
   lastReviewed: "March 1, 2026",
-  audience: "Layperson",
+  audience: "General",
   format: "1-page summary",
 };
 

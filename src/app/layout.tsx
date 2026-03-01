@@ -16,7 +16,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://codexquickref.vercel.app";
 
 const metadataDescription =
-  "Layperson-friendly Codex app quick reference covering shortcuts, Local/Worktree/Cloud modes, review workflow, automations, troubleshooting, and print tips.";
+  "Codex app quick reference covering shortcuts, Local/Worktree/Cloud modes, review workflow, automations, troubleshooting, and print-friendly usage tips.";
 
 export const metadata: Metadata = {
   title: "Codex App Quick Reference",

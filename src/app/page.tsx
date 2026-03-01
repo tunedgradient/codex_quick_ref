@@ -13,7 +13,7 @@ function sectionWeight(section: QuickRefSection): number {
 export default function Home() {
   return (
     <main className="canvas">
-      <article className="sheet" aria-label="Codex app quick reference layperson sheet">
+      <article className="sheet" aria-label="Codex app quick reference sheet">
         <section className="sheet-main">
           <div className="sheet-columns">
             {columnSections.map((column, columnIndex) => {
